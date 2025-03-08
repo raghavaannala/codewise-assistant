@@ -21,16 +21,18 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/study" element={<Study />} />
-          <Route path="/code" element={<CodeGenie />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/games" element={<Games />} />
-          <Route path="/games/quizzes/:quizId" element={<Quiz />} />
-          <Route path="/groups" element={<StudyGroups />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="page-transition-container">
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/study" element={<Study />} />
+            <Route path="/code" element={<CodeGenie />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/games" element={<Games />} />
+            <Route path="/games/quizzes/:quizId" element={<Quiz />} />
+            <Route path="/groups" element={<StudyGroups />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
