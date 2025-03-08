@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Users, Gamepad } from 'lucide-react';
 import FadeIn from '../animations/FadeIn';
 import GlassMorphCard from '../ui/GlassMorphCard';
 import { useNavigate } from 'react-router-dom';
@@ -33,6 +33,16 @@ const Hero = () => {
                 </Button>
                 <Button size="lg" variant="outline" className="btn-hover" onClick={() => navigate('/study')}>
                   Study Modules
+                </Button>
+              </div>
+              <div className="flex gap-4 pt-2">
+                <Button variant="ghost" className="flex items-center" onClick={() => navigate('/groups')}>
+                  <Users className="mr-2 h-4 w-4" />
+                  Join Study Groups
+                </Button>
+                <Button variant="ghost" className="flex items-center" onClick={() => navigate('/games')}>
+                  <Gamepad className="mr-2 h-4 w-4" />
+                  Coding Games
                 </Button>
               </div>
             </div>

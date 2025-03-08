@@ -9,6 +9,9 @@ import Study from "./pages/Study";
 import CodeGenie from "./pages/CodeGenie";
 import Search from "./pages/Search";
 import NotFound from "./pages/NotFound";
+import Games from "./pages/Games";
+import StudyGroups from "./pages/StudyGroups";
+import Quiz from "./pages/Quiz";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +26,9 @@ const App = () => (
           <Route path="/study" element={<Study />} />
           <Route path="/code" element={<CodeGenie />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/games" element={<Games />} />
+          <Route path="/games/quizzes/:quizId" element={<Quiz />} />
+          <Route path="/groups" element={<StudyGroups />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

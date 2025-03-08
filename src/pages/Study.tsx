@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import Sidebar from '@/components/layout/Sidebar';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import TaskGroups from '@/components/study/TaskGroups';
 import StudyModules from '@/components/study/StudyModules';
@@ -23,8 +24,9 @@ const Study = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
+      <Sidebar />
       
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-20 pl-16 md:pl-64 transition-all duration-300">
         <div className="container mx-auto px-4 md:px-6 py-8">
           <div className="flex flex-col md:flex-row justify-between items-start mb-6">
             <div>
