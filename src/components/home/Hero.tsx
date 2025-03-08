@@ -4,8 +4,11 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import FadeIn from '../animations/FadeIn';
 import GlassMorphCard from '../ui/GlassMorphCard';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+  
   return (
     <section className="pt-32 pb-16">
       <div className="container mx-auto px-4 md:px-6">
@@ -21,15 +24,15 @@ const Hero = () => {
                 Your AI-Powered <span className="text-gradient">Study Assistant</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-md">
-                Elevate your learning with StudyBuddy + CodeGenie. Intelligent code assistance, study modules, and instant knowledge at your fingertips.
+                Elevate your learning with StudyBuddy + CodeGenie. Intelligent code assistance, study modules, and instant knowledge using TinyLlama's local AI processing.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="btn-hover">
-                  Get Started
+                <Button size="lg" className="btn-hover" onClick={() => navigate('/code')}>
+                  Try CodeGenie
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-                <Button size="lg" variant="outline" className="btn-hover">
-                  Learn More
+                <Button size="lg" variant="outline" className="btn-hover" onClick={() => navigate('/study')}>
+                  Study Modules
                 </Button>
               </div>
             </div>
@@ -45,8 +48,8 @@ const Hero = () => {
                     <code>{`# Using TinyLlama for code assistance
 from tinyLlama import CodeGenie
 
-# Initialize the AI assistant
-assistant = CodeGenie(model="local")
+# Initialize the AI assistant (locally)
+assistant = CodeGenie(model="tiny", quantized=True)
 
 # Generate optimized code
 result = assistant.optimize("""
@@ -69,7 +72,7 @@ print(result.code)
                     <p className="text-sm font-medium">Time Complexity Analysis</p>
                     <p className="text-xs text-muted-foreground">Original: O(2^n) → Optimized: O(n)</p>
                   </div>
-                  <Button size="sm" variant="outline">Run</Button>
+                  <Button size="sm" variant="outline" onClick={() => navigate('/code')}>Try It</Button>
                 </div>
               </GlassMorphCard>
             </div>
